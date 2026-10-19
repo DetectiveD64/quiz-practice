@@ -1,0 +1,41 @@
+# Personal history, downloaded questions, generated audio, and browser state
+data/
+logs/
+**/state.json
+**/questions.json
+**/csrf-token
+**/grading-repairs/
+**/speech-cache/
+**/desktop-profile/
+
+# Installed dependencies and release artifacts
+node_modules/
+runtime/
+neural/node_modules/
+neural/model/*.onnx
+neural/model/*.bin
+neural/model/tokenizer.json
+*.exe
+*.dll
+*.pdb
+*.zip
+*.nupkg
+*.wav
+*.tmp
+app-preview.*
+dist/
+release/
+work/
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+*.p12
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini

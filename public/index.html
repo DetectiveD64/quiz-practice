@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Quiz Practice</title>
+  <link rel="stylesheet" href="/app.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="filters" aria-label="Question filters">
+    <fieldset id="topic-filters"><legend>Topics</legend><div class="options" id="topics"></div></fieldset>
+    <div class="second-row">
+      <fieldset id="level-filters"><legend>Level</legend><div class="options" id="levels"></div></fieldset>
+      <div class="speech-options">
+        <label class="check-option"><input id="read-aloud" type="checkbox"><span>Read aloud</span></label>
+        <button class="text-button" id="read-question" type="button" disabled>Play</button>
+        <button class="text-button" id="stop-reading" type="button" hidden>Stop</button>
+      </div>
+    </div>
+  </header>
+  <div class="practice-layout">
+    <main class="question-area">
+      <p class="question-meta" id="question-meta"></p>
+      <p class="question" id="question">Loading questions…</p>
+      <p class="source" id="source"></p>
+      <form id="answer-form" autocomplete="off">
+        <label class="visually-hidden" for="answer">Your answer</label>
+        <div class="answer-line">
+          <input id="answer" name="answer" type="text" placeholder="Answer…" maxlength="400" spellcheck="false" disabled>
+          <button id="submit-answer" class="submit-button" type="submit" disabled>Submit</button>
+        </div>
+        <div class="below-answer"><span id="keyboard-hint">Enter to answer</span><button id="skip-question" class="text-button" type="button" disabled>Skip</button></div>
+      </form>
+      <div id="feedback" class="feedback" role="status" aria-live="polite" hidden>
+        <p id="verdict" class="verdict"></p>
+        <p id="correct-answer" class="correct-answer"></p>
+      </div>
+      <p class="notice" id="notice" role="status" hidden></p>
+    </main>
+    <aside class="statistics" aria-label="Statistics">
+      <h1>Statistics</h1>
+      <div class="stat-primary"><strong id="stat-score">0 / 0</strong><span>correct / answered</span></div>
+      <dl>
+        <div><dt>Accuracy</dt><dd id="stat-accuracy">0%</dd></div>
+        <div><dt>Incorrect</dt><dd id="stat-incorrect">0</dd></div>
+        <div><dt>Streak</dt><dd id="stat-streak">0</dd></div>
+        <div><dt>Best streak</dt><dd id="stat-best">0</dd></div>
+      </dl>
+    </aside>
+  </div>
+</body>
+</html>
